@@ -21,3 +21,4 @@ if __name__ == '__main__':
 
     rect = Rectangle('5', '2')
     rect.display()
+
