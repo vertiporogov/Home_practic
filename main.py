@@ -42,14 +42,17 @@ class Person:
 
     @person_name.setter
     def person_name(self, name):
-        self.__name = name
+        if isinstance(name, str) and name.isalpha():
+            self.__name = name
+        else:
+            print('Имя некорректно')
 
     @person_age.setter
     def person_age(self, age):
-        self.__age = age
-
-
-
+        if 0 < age < 120:
+            self.__age = age
+        else:
+            print('Не правильно указан возраст')
 
 
 if __name__ == '__main__':
@@ -58,7 +61,7 @@ if __name__ == '__main__':
     print(p1.person_name)
     print(p1.person_age)
 
-    p1.person_name = 'www'
+    p1.person_name = 'usdgfsyugyf'
     print(p1.person_name)
     p1.person_age = 20
     print(p1.person_age)
